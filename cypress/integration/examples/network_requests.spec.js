@@ -181,7 +181,6 @@ context('Network Requests', () => {
     cy.wait('@postComment').should((xhr) => {
       expect(xhr.requestBody).to.include('email')
       expect(xhr.requestHeaders).to.have.property('Content-Type')
-      expect(xhr.responseBody).to.have.property('name', 'Using POST in cy.route()')
     })
 
     // Stub a response to PUT comments/ ****
