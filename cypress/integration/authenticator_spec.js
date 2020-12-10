@@ -1,3 +1,5 @@
+import { wait } from "@testing-library/react";
+
   describe('Authenticator:', function() {
     // Step 1: setup the application state
     beforeEach(function() {
@@ -26,7 +28,8 @@
         })
         .first()
         .find("button[type='submit']", { includeShadowDom: true })
-        .click({ force: true });
+        .click({ force: true })
+        .wait(6000);
 
       // Step 3: Make an assertion (Check for sign-out text)
       cy.get("amplify-sign-out").find(selectors.signOutButton, { includeShadowDom: true })
