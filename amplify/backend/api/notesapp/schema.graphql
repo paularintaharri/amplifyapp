@@ -1,4 +1,4 @@
-type Note @model {
+type Card @model {
   id: ID!
   name: String!
   description: String
